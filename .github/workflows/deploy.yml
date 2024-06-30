@@ -35,4 +35,4 @@ jobs:
           ssh-keyscan -H 124.71.16.220 >> ~/.ssh/known_hosts
           git config --global user.email "jian69498@gmail.com"
           git config --global user.name "lijian"
-          ssh -i ~/.ssh/id_rsa root@124.71.16.220 'bash ~/scripts/deploy.sh'
+          ssh -i ~/.ssh/id_rsa root@124.71.16.220 'bash ~/script/deploy.sh'
