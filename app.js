@@ -133,5 +133,5 @@ app.post("/batch", async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("express 3000 ");
+  console.log("express 3000 ok");
 });
