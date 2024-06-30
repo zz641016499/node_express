@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Run tests
-      #   run: npm test
+      - name: Run tests
+        run: npm test
 
       - name: Deploy to server
         env:
@@ -31,5 +31,9 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
           ssh-keyscan -H 124.71.16.220 >> ~/.ssh/known_hosts
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git clone git@github.com:zz641016499/node_express.git
           ssh -i ~/.ssh/id_rsa root@124.71.16.220 'bash ~/scripts/deploy.sh'
